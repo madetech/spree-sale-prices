@@ -7,6 +7,7 @@ Add pre-sale prices to Spree, so you can show the pre-sale price alongside the c
 
 ```ruby
 bundle
+bundle exec rake test_app
 bundle exec rspec
 ```
 
