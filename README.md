@@ -2,6 +2,44 @@
 
 Add pre-sale prices to Spree, so you can show the pre-sale price alongside the currently discounted price.
 
+## Installing
+
+```ruby
+# Add to your Gemfile
+gem 'spree_pre_sale_prices', github: 'madetech/spree_pre_sale_prices'
+
+# Install the migrations
+bin/rake spree_pre_sale_prices:install:migrations
+```
+
+
+## Using
+
+You can query products and variants:
+
+```ruby
+product = Spree::Product.first
+variant = product.variants.first
+
+product.pre_sale_price_in('GBP').amount.to_s  # => '200.0'
+
+variant.pre_sale_price_in('USD').amount.to_s  # => '100.0'
+
+product.on_sale?                              # => true
+```
+
+And create new pre-sale prices:
+
+```ruby
+variant = Spree::Variant.first
+
+pre_sale_price = variant.pre_sale_price_in('USD')
+pre_sale.price.amount = 100
+pre_sale_price.save
+
+variant.pre_sale_price_in('USD').amount.to_s  # => '100.0'
+```
+
 
 ## Testing
 
@@ -21,4 +59,4 @@ Developed and maintained by [Made Tech Ltd](https://www.madetech.com/). Key cont
 
 
 ## License
-Copyright © 2016 [Made Tech Ltd](https://www.madetech.com/). It is free software, and may be redistributed under the terms specified in the MIT-LICENSE file.
+Copyright © 2016 [Made Tech Ltd](https://www.madetech.com/). It is free software, and may be redistributed under the terms specified in the LICENSE file.
