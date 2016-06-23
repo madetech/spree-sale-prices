@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Spree::PreSalePrice do
   let(:price) { 100 }
 

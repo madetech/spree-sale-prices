@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Spree::Variant do
   let(:gbp_price) { create(:pre_sale_price, amount: 200, currency: 'GBP') }
   let(:variant) { create(:variant, pre_sale_prices: [gbp_price]) }
