@@ -6,7 +6,7 @@ describe Spree::Variant do
 
   context '.pre_sale_price_in' do
     it 'returns the price in the provided currency' do
-      expect(variant.pre_sale_price_in('GBP').amount.to_s).to eq('200.00')
+      expect(variant.pre_sale_price_in('GBP').amount.to_s).to eq('200.0')
     end
   end
 end
