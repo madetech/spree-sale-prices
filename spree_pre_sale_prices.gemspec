@@ -4,7 +4,7 @@ require 'spree_pre_sale_prices/version'
 
 Gem::Specification.new do |s|
   s.name        = 'spree_pre_sale_prices'
-  s.version     = SpreePreSalePrices::VERSION
+  s.version     = PreSalePrices::VERSION
   s.summary     = 'Add suport for sale prices to Spree'
   s.description = s.summary
   s.license     = 'BSD-3-Clause'

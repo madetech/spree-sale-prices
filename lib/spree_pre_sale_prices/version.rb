@@ -1,3 +1,3 @@
-module SpreePreSalePrices
+module PreSalePrices
   VERSION = '1.0.0'
 end
