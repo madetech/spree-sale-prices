@@ -14,13 +14,13 @@ module PreSalePrices
 
       def create_or_update_prices
         params[:prices].each do |variant_id, prices|
-          p variant_id
-          p prices
+          variant = Spree::Variant.find(variant_id)
+          PreSalePrices::PriceUpdater.new(variant).update_prices(prices)
         end
 
         params[:pre_sale_prices].each do |variant_id, prices|
-          p variant_id
-          p prices
+          variant = Spree::Variant.find(variant_id)
+          PreSalePrices::PriceUpdater.new(variant).update_pre_sale_prices(prices)
         end
       end
     end
