@@ -4,7 +4,7 @@
 
 Add pre-sale prices to Spree, so you can show the pre-sale price alongside the currently discounted price.
 
-Requires `spree_multi_currency`.
+Requires [spree_multi_currency](https://github.com/spree-contrib/spree_multi_currency).
 
 
 ## Installing
