@@ -1,0 +1,36 @@
+<div class="prices-section">
+  <h5 class="pre-sale-header">
+    <%= variant.sku %> (<%= variant.is_master? ? t(:master) : variant.options_text %>)
+  </h5>
+
+  <hr>
+
+  <table class="table prices-table">
+    <thead data-hook="variants_header">
+      <tr>
+        <th><%= Spree.t(:currency) %></th>
+        <th class="js-pre-sale-header"><%= Spree.t(:pre_sale_amount) %></th>
+        <th><%= Spree.t(:amount) %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% supported_currencies.uniq.each do |currency| %>
+        <% pre_sale_price = variant.pre_sale_price_in(currency.iso_code) %>
+        <% price = variant.price_in(currency.iso_code) %>
+        <tr>
+          <td>
+            <%= currency.iso_code %>
+          </td>
+          <td class="js-pre-sale-cell">
+            <%= text_field_tag("pre_sale_prices[#{variant.id}][#{currency.iso_code}]", (pre_sale_price ? pre_sale_price.display_amount.money : '')) %>
+          </td>
+          <td>
+            <%= text_field_tag("prices[#{variant.id}][#{currency.iso_code}]", (price ? price.display_amount.money : '')) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="clearfix"></div>
+</div>
