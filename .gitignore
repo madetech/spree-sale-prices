@@ -11,4 +11,5 @@ tmp
 nbproject
 pkg
 *.swp
+pkg
 spec/dummy
