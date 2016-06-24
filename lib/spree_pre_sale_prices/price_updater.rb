@@ -14,6 +14,8 @@ module PreSalePrices
 
     def update_pre_sale_prices(prices)
       prices.each do |currency, new_price|
+        next if new_price.to_f <= 0
+
         pre_sale_price = variant.pre_sale_price_in(currency)
         pre_sale_price.amount = new_price
         pre_sale_price.save!
