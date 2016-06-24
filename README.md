@@ -1,3 +1,6 @@
+[![Code Climate](https://codeclimate.com/github/madetech/spree_pre_sale_prices/badges/gpa.svg)](https://codeclimate.com/github/madetech/spree_abandoned_orders) [![Build Status](https://travis-ci.org/madetech/spree_pre_sale_prices.svg?branch=master)](https://travis-ci.org/madetech/spree_abandoned_orders) [![Test Coverage](https://codeclimate.com/github/madetech/spree_pre_sale_prices/badges/coverage.svg)](https://codeclimate.com/github/madetech/spree_abandoned_orders/coverage)
+
+
 # Pre Sale Prices for Spree
 
 Add pre-sale prices to Spree, so you can show the pre-sale price alongside the currently discounted price.
