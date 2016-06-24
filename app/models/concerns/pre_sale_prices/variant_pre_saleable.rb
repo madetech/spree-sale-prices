@@ -7,11 +7,11 @@ module PreSalePrices
                class_name: 'Spree::PreSalePrice',
                dependent: :destroy,
                inverse_of: :variant
+    end
 
-      def pre_sale_price_in(currency)
-        pre_sale_prices.find { |price| price.currency == currency } ||
-          Spree::PreSalePrice.new(variant_id: id, currency: currency, amount: 0)
-      end
+    def pre_sale_price_in(currency)
+      pre_sale_prices.find { |price| price.currency == currency } ||
+        Spree::PreSalePrice.new(variant_id: id, currency: currency, amount: 0)
     end
   end
 end

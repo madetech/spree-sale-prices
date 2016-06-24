@@ -10,10 +10,10 @@ module PreSalePrices
       end, through: :variants
 
       delegate :pre_sale_price_in, to: :master
+    end
 
-      def on_sale?
-        pre_sale_prices.count > 0
-      end
+    def on_sale?
+      pre_sale_prices.count > 0
     end
   end
 end
