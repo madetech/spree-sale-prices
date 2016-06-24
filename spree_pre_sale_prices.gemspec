@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   s.require_paths = %w{lib}
 
   s.add_dependency 'spree', '~> 2.4'
+  s.add_dependency 'spree_multi_currency'
 
   s.add_development_dependency 'capybara'
   s.add_development_dependency 'codeclimate-test-reporter'
@@ -30,4 +31,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rubocop', '0.37.2'
   s.add_development_dependency 'rubocop-rspec', '1.4.0'
   s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'coffee-rails', '~> 4.0.0'
 end
