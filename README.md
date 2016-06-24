@@ -1,5 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/madetech/spree_pre_sale_prices/badges/gpa.svg)](https://codeclimate.com/github/madetech/spree_abandoned_orders) [![Build Status](https://travis-ci.org/madetech/spree_pre_sale_prices.svg?branch=master)](https://travis-ci.org/madetech/spree_abandoned_orders) [![Test Coverage](https://codeclimate.com/github/madetech/spree_pre_sale_prices/badges/coverage.svg)](https://codeclimate.com/github/madetech/spree_abandoned_orders/coverage)
-
+[![Build Status](https://travis-ci.org/madetech/spree_pre_sale_prices.svg?branch=master)](https://travis-ci.org/madetech/spree_abandoned_orders)
 
 # Pre Sale Prices for Spree
 
@@ -46,10 +45,10 @@ variant.pre_sale_price_in('USD').amount.to_s  # => '100.0'
 
 ## Testing
 
-```ruby
-bundle
-bundle exec rake test_app
-bundle exec rspec
+```sh
+$ bundle
+$ bundle exec rake test_app
+$ bundle exec rspec
 ```
 
 ## Credits
