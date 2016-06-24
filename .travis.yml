@@ -1,5 +1,8 @@
+sudo: false
+cache: bundler
+bundler_args: --quiet
 language: ruby
 rvm:
   - 2.2.1
-before_script:
-  - "bundle exec rake test_app"
+script:
+  - bundle exec rake
