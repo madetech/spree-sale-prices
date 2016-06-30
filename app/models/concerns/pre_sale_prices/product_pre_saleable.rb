@@ -7,7 +7,7 @@ module PreSalePrices
         order('spree_variants.position,
                spree_variants.id,
                currency')
-      end, through: :variants
+      end, through: :variants_including_master
 
       delegate :pre_sale_price_in, to: :master
     end
