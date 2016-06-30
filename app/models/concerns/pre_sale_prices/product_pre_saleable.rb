@@ -10,6 +10,7 @@ module PreSalePrices
       end, through: :variants_including_master
 
       delegate :pre_sale_price_in, to: :master
+      delegate :pre_sale_price, to: :master
     end
 
     def on_sale?
