@@ -7,6 +7,8 @@ module PreSalePrices
                class_name: 'Spree::PreSalePrice',
                dependent: :destroy,
                inverse_of: :variant
+
+      delegate :on_sale?, to: :master
     end
 
     def pre_sale_price_in(currency)
