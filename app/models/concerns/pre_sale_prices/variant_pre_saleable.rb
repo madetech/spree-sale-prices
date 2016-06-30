@@ -15,5 +15,9 @@ module PreSalePrices
       pre_sale_prices.find { |price| price.currency == currency } ||
         Spree::PreSalePrice.new(variant_id: id, currency: currency, amount: 0)
     end
+
+    def display_pre_sale_price_in(currency)
+      pre_sale_price_in(currency).display_price
+    end
   end
 end
