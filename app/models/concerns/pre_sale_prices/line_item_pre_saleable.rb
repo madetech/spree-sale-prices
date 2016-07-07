@@ -6,6 +6,10 @@ module PreSalePrices
       before_validation :copy_pre_sale_price
     end
 
+    def pre_sale_price_money
+      Spree::Money.new(pre_sale_price, { currency: currency })
+    end
+
     def copy_pre_sale_price
       if variant && !pre_sale_price_set?
         update_pre_sale_price
