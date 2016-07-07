@@ -11,6 +11,7 @@ module PreSalePrices
     def self.activate
       Spree::Variant.include(::PreSalePrices::VariantPreSaleable)
       Spree::Product.include(::PreSalePrices::ProductPreSaleable)
+      Spree::LineItem.include(::PreSalePrices::LineItemPreSaleable)
       Spree::Admin::PricesController.include(::PreSalePrices::AdminPricesPreSaleable)
     end
 
