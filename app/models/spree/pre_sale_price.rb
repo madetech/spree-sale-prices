@@ -37,6 +37,8 @@ module Spree
     alias display_price_no_cents display_amount_no_cents
 
     def to_s
+      return '' unless amount.present?
+
       '%.2f' % amount
     end
 

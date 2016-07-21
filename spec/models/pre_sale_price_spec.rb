@@ -8,8 +8,15 @@ describe Spree::PreSalePrice do
   end
 
   context '.to_s' do
-    subject { described_class.new(price: price).to_s }
+    it 'nicely formats price value' do
+      pre_sale_price = described_class.new(price: price)
+      expect(pre_sale_price.to_s).to eq('100.00')
+    end
 
-    it { is_expected.to eq('100.00') }
+    it 'handles nil price value' do
+      pre_sale_price = described_class.new(price: nil)
+      expect(pre_sale_price.to_s).to eq('')
+    end
   end
 end
+
