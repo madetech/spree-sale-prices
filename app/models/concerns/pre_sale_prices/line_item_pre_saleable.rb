@@ -19,7 +19,7 @@ module PreSalePrices
     def update_pre_sale_price
       variant_pre_sale_price = variant.pre_sale_price_in(variant.currency).amount
 
-      if variant_pre_sale_price > 0
+      if variant_pre_sale_price.present? and variant_pre_sale_price > 0
         self.pre_sale_price = variant_pre_sale_price
       else
         self.pre_sale_price = nil
