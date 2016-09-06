@@ -1,4 +1,15 @@
 describe Spree::Product do
+  context 'when there are no prices' do
+    let(:variant_with_no_prices) { create(:variant, pre_sale_prices: []) }
+    let(:product_with_multiple_currency_prices) { create(:product, master: variant_with_no_prices) }
+
+    subject { product_with_multiple_currency_prices }
+
+    it 'should be not on sale' do
+      expect(subject.on_sale?('EUR')).to be(false)
+    end
+  end
+
   context 'when product on sale' do
     let(:gbp_price) { create(:pre_sale_price, amount: 200, currency: 'GBP') }
     let(:on_sale_variant) { create(:variant, pre_sale_prices: [gbp_price]) }
