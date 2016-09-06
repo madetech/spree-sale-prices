@@ -9,6 +9,10 @@ module Spree
     validates :amount, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
     validate :validate_amount_maximum
 
+    def self.in_currency(currency)
+      where(currency: currency)
+    end
+
     def display_amount
       money
     end
