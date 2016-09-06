@@ -30,7 +30,7 @@ product.pre_sale_price_in('GBP').amount.to_s  # => '200.0'
 
 variant.pre_sale_price_in('USD').amount.to_s  # => '100.0'
 
-product.on_sale?                              # => true
+product.on_sale?('USD')                       # => true
 ```
 
 And create new pre-sale prices:

@@ -13,8 +13,8 @@ module PreSalePrices
       delegate :pre_sale_price, to: :master
     end
 
-    def on_sale?
-      pre_sale_prices.count > 0
+    def on_sale?(currency)
+      pre_sale_prices.in_currency(currency).sum(:amount) > 0
     end
   end
 end
