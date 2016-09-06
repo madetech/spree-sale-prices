@@ -6,7 +6,7 @@ describe Spree::Product do
     subject { product_with_multiple_currency_prices }
 
     it 'should be not on sale' do
-      expect(subject.on_sale?('EUR')).to be(false)
+      expect(subject.on_sale?('EUR')).to be_falsy
     end
   end
 
@@ -44,7 +44,7 @@ describe Spree::Product do
 
     subject { product_with_zero_presale_price.on_sale?('GBP') }
 
-    it { is_expected.to be(false) }
+    it { is_expected.to be_falsy }
   end
 
   context 'when only some currencies are on sale' do
@@ -56,11 +56,11 @@ describe Spree::Product do
     subject { product_with_multiple_currency_prices }
 
     it 'should not be on sale in EUR' do
-      expect(subject.on_sale?('EUR')).to be(false)
+      expect(subject.on_sale?('EUR')).to be_falsy
     end
 
     it 'should be on sale in GBP' do
-      expect(subject.on_sale?('GBP')).to be(true)
+      expect(subject.on_sale?('GBP')).to be_truthy
     end
   end
 end
