@@ -1,6 +1,8 @@
 module Spree
-  class PreSalePrice < Spree::Base
+  class PreSalePrice < ActiveRecord::Base
     acts_as_paranoid
+
+    attr_accessible :variant_id, :currency, :amount, :price
 
     belongs_to :variant, class_name: 'Spree::Variant',
                          inverse_of: :pre_sale_prices, touch: true

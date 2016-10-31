@@ -18,20 +18,17 @@ Gem::Specification.new do |s|
 
   s.files = Dir['{app,lib,spec}/**/*.rb'] + s.extra_rdoc_files
   s.test_files    = %w{spec}
-  s.require_paths = %w{lib}
+  s.require_paths = %w{lib app}
 
-  s.add_dependency 'spree', '~> 2.4'
+  s.add_dependency 'spree', '~> 2.0'
   s.add_dependency 'spree_multi_currency'
+  s.add_dependency 'money', '6.0.1'
 
   s.add_development_dependency 'capybara'
   s.add_development_dependency 'codeclimate-test-reporter'
   s.add_development_dependency 'database_cleaner'
   s.add_development_dependency 'factory_girl'
-  s.add_development_dependency 'pry-byebug'
   s.add_development_dependency 'rb-readline'
   s.add_development_dependency 'rspec-rails'
-  s.add_development_dependency 'rubocop', '0.37.2'
-  s.add_development_dependency 'rubocop-rspec', '1.4.0'
   s.add_development_dependency 'sqlite3'
-  s.add_development_dependency 'coffee-rails', '~> 4.0.0'
 end
